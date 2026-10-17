@@ -103,11 +103,3 @@ determines what you can safely do with the material, and it is the one section a
 should not skip.
 
 ---
-
-## Contact
-
-TFast Digital
-Private repository access granted per client on request.
-
-Unlocking voids manufacturer warranty and can brick hardware. Intended for authorised
-repair, interoperability and security research.
