@@ -1,0 +1,48 @@
+# NEVER commit these — they reveal the structure of the private analysis tree.
+#
+# private/ contains:
+#   MANIFEST-decompiled.sha256   4,793 lines — every filename in the analysis tree
+#   MANIFEST-docs.sha256        23 lines    — every report filename
+#   COMMITMENT.txt              the aggregate hashes, for the owner's records
+#
+# A manifest is a commitment when hashed. A manifest IS a disclosure when shipped.
+# Only the aggregate hash of a manifest may leave the machine.
+private/
+
+# Any archive of the analysis tree
+*.7z
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+# Deliverable staging
+delivered/
+deliverables/
+
+# Device data — IMEI / RF calibration / identifiers
+*.bin
+*.img
+*.dump
+nvram*
+nvdata*
+nvcfg*
+persist*
+efuse*
+seccomp*
+*imei*
+*serial*
+
+# Key material
+*.pem
+*.key
+*.pfx
+*.p12
+signature.bin
+
+# Editor / OS
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
