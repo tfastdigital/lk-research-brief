@@ -130,6 +130,36 @@ analysed for interoperability research. Publicly available protocol and file-for
 documentation. One public open-source implementation, analysed for mechanism only — no
 code from it is included in any tier.
 
+### 4.1 How this was produced
+
+Stated because it bears on how you should read the material, and because it is better
+disclosed than discovered.
+
+The analysis and the drafting of these documents were **tooling-assisted**. Static
+analysis was performed on the decompiled reconstruction with scripted search, extraction
+and cross-checking; the prose was drafted and edited with the same assistance.
+
+What that does *not* change:
+
+- **Every substantive claim carries a confidence label** — verified, public-source,
+  inferred, or unknown. §6 of `BRIEF.md` lists seven open questions in full.
+- **Claims that were checkable were checked.** The protocol checksum was recomputed across
+  five independent frames; the lock-state constants were cross-referenced against a
+  public tool's published definitions; vendor authentication was compared against an
+  independent implementation. Where nothing was available to check against, the item is
+  labelled unknown rather than smoothed over.
+- **The measurements are reproducible.** Every figure in `STATISTICS.md` is a command you
+  can run yourself. Every figure in this package is measured, not estimated.
+
+What you should draw from it: the value here is the *findings and the data*, not the
+prose. Judge the material on whether its claims survive checking — `FINDINGS/01` §1 gives
+you a cheap way to test one right now.
+
+**Claims requiring hardware confirmation are marked as such.** Where a claim depends on a
+specific firmware or device rather than on the binary or a public specification, it is
+labelled accordingly and should not be treated as established until you confirm it on your
+own unit. No warranty is given that any untested claim holds on your hardware.
+
 ---
 
 ## 5. Ethical and legal constraints on use
