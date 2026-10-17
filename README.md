@@ -1,105 +1,82 @@
-# MediaTek LK Unlock Research — Buyer Package
+# MediaTek LK & META Research | Buyer Demonstration
 
-This repository is a **capability brief**: a demonstration that a substantial body of
-reverse-engineering work exists, presented so you can assess it without receiving it.
+**Independent reverse-engineering research portfolio — TFast Digital Agency**
 
-Nothing here is a deliverable. It is the evidence you need to decide whether to buy.
+> **DEMO / CAPABILITY PREVIEW ONLY.** This repository demonstrates the scope, methodology, and selected findings of a larger private research project. It is **not** a source-code release, ready-to-run unlocking tool, or complete technical delivery.
 
----
+## Why this repository exists
 
-## Read in this order
+Prospective research and development partners should be able to evaluate the work **before** discussing a commercial licence. This preview provides a transparent research summary, reproducible measurement methods, selected worked examples, known limitations, and the proposed scope of paid deliverables.
 
-| # | Document | Time | Purpose |
-|---|---|---|---|
-| 1 | **[`BRIEF.md`](BRIEF.md)** | 10 min | The finding, the volume, what is for sale, what is withheld, honest limits |
-| 2 | **[`STATISTICS.md`](STATISTICS.md)** | 5 min | Every figure measured and reproducible — no estimates |
-| 3 | **[`COMMITMENT.md`](COMMITMENT.md)** | 10 min | How the content is proven to exist without revealing it |
-| 4 | **[`FINDINGS/01-unlock-techniques.md`](FINDINGS/01-unlock-techniques.md)** | 15 min | Worked example: two techniques, one checkable claim, documented failure modes |
-| 5 | **[`FINDINGS/02-protocol-recovery.md`](FINDINGS/02-protocol-recovery.md)** | 15 min | Worked example: recovering a binary protocol from an obfuscated client |
-| 6 | **[`SCOPE.md`](SCOPE.md)** | 10 min | Exactly what is in each tier, and the provenance statement |
-| 7 | **[`TERMS.md`](TERMS.md)** | 10 min | Licence, confidentiality, escrow, limits |
+**[Start with the 10-minute capability brief](BRIEF.md)** · **[View measured research statistics](STATISTICS.md)** · **[Read sample findings](FINDINGS/01-unlock-techniques.md)**
 
----
+## Research snapshot
 
-## The claim in three lines
+| Research area | Reported scope |
+| --- | ---: |
+| Decompiled reconstruction files analysed | 4,793 |
+| VM disassembly dumps | 5,573 |
+| Analysis scripts | 135 |
+| Technical reports | 23 |
+| Functional methods catalogued | ~700 |
+| Backend actions identified | 38 |
+| Device profiles documented | 5 |
 
-1. A MediaTek device's bootloader lock is enforced by LK; the factory test runtime **META**
-   is loaded by the same preloader as a **sibling**, and runs *instead of* the boot path.
-   So while META is running, LK has never executed and the lock decision has never been
-   made. That is why partition-level access works on a locked retail phone — boot order,
-   not a vulnerability.
-2. Two **different** unlock techniques exist, for two different lock designs. Applying the
-   wrong one wastes weeks and can brick the device. Both are specified.
-3. The research covers **4,793 decompiled files**, 5,573 disassembly dumps, 135 analysis
-   scripts and 23 written reports — with the obfuscator's dispatch table reconstructed to
-   1,972 of 1,974 entries.
+*These figures are documented by the project in [STATISTICS.md](STATISTICS.md). The underlying private archive is not included here, so prospective buyers should verify archive contents during due diligence.*
 
----
+## What the demonstration shows
 
-## Verify before you trust
+- **LK bootloader research:** comparison of two distinct lock-verification designs, investigative methodology, and documented failure modes.
+- **MediaTek META research:** factory-runtime architecture and protocol-analysis methodology.
+- **Client application analysis:** research into an obfuscated commercial servicing client, including method inventories, component boundaries, and backend API behaviour.
+- **Evidence and limits:** reproducible measurement instructions, sample technical findings, uncertainty labels, and explicitly withheld implementation data.
 
-**Do not take any of this on faith.** Two things you can check immediately, both cheap:
+This is an **independent behavioural reconstruction and technical specification**, **not original vendor source code**. The complete research is not a finished, compilable commercial application.
 
-### A. The commitment
+## Explore the buyer demonstration
 
-The full analysis tree is bound by hash:
+| Document | What it helps you evaluate |
+| --- | --- |
+| [BRIEF.md](BRIEF.md) | Research objective, technical scope, findings, and known gaps |
+| [STATISTICS.md](STATISTICS.md) | Counts, measurement methods, and verification claims |
+| [FINDINGS/01-unlock-techniques.md](FINDINGS/01-unlock-techniques.md) | Sample LK research and distinctions between verification models |
+| [FINDINGS/02-protocol-recovery.md](FINDINGS/02-protocol-recovery.md) | Worked example of analysing a binary protocol |
+| [COMMITMENT.md](COMMITMENT.md) | Hash-based archive integrity verification procedure |
+| [SCOPE.md](SCOPE.md) | What is included and excluded at each commercial tier |
+| [TERMS.md](TERMS.md) | Proposed licensing terms and buyer responsibilities |
 
-```
-MANIFEST-decompiled.sha256  (4,793 lines) = fe4d29db5158e5c41173f02371e4c452e357412e1c9f61d75695c316d0f5fdc6
-MANIFEST-docs.sha256        (23 lines)    = c14059ca5bfc2432decb82bc278750d1c122d49b86f01f6ba73f2633731c8d58
-```
+## Available research licensing
 
-At delivery you recompute the manifests and they must match exactly — proving nothing was
-substituted in between. That commits me to the content while revealing none of it.
-Procedure: [`COMMITMENT.md`](COMMITMENT.md).
+| Tier | Scope | Access |
+| --- | --- | --- |
+| **A — Public brief** | This buyer demonstration and sample findings | Free preview |
+| **B — Technical pack** | 23 research reports, excluding protected implementation data | Commercial licence / NDA |
+| **C — Implementation licence** | Tier B plus extracted data and research toolkit | Commercial licence / NDA |
+| **D — Full research assignment** | Analysis tree, scripts, and broader negotiated rights | Commercial licence / NDA |
 
-### B. One specific, checkable detail
+See [SCOPE.md](SCOPE.md) and [TERMS.md](TERMS.md) for precise entitlements. **Do not assume rights to redistribute or commercially deploy from the preview.**
 
-[`FINDINGS/01-unlock-techniques.md`](FINDINGS/01-unlock-techniques.md) §1 documents a
-vendor bootloader marker string that contains a **typo**. Search any firmware dump you
-already hold for it. If it is not there, this work is not what it claims and you have
-spent an hour.
+## How buyers can verify the work
 
-That test is deliberate. It costs you almost nothing and it either earns your attention
-or ends the conversation.
+1. Review the [sample findings](FINDINGS/01-unlock-techniques.md) and check the claims against independent evidence.
+2. Examine the measurement methodology in [STATISTICS.md](STATISTICS.md).
+3. Request a private technical review and confirm the licence tier.
+4. At delivery, compare the archive with the published hash commitments following [COMMITMENT.md](COMMITMENT.md).
 
----
+**Hash commitments establish integrity of a subsequently supplied archive when verified; they do not independently establish research accuracy, ownership, legal rights, or the original date of creation.** A buyer should conduct technical and legal due diligence.
 
-## What is deliberately not here
+## Known limitations
 
-Stated plainly, because a buyer deserves to know the boundary:
+Some protocol operations remain unidentified; device support varies by firmware and SoC; the newest generations have not all been hardware-tested. No vendor signing keys, live credentials, original vendor source code, or ready-to-run end-user tool are supplied. See [BRIEF.md](BRIEF.md) for the open questions.
 
-| Not in this package | Where |
-|---|---|
-| Patch byte sequences per architecture | Tier C |
-| Complete marker string sets | Tier C |
-| Device profile definitions | Tier C |
-| Partition offset tables | Tier C |
-| Scoring weights and thresholds | Tier C |
-| Decompiled reconstruction | Tier D |
-| Vendor signing key | **nowhere** — not held, not obtainable |
+## Commercial inquiries
 
-You get the method in full. You do not get the data. That boundary is the product.
+**TFast Digital Agency**
+
+Website: https://tfastdigital.com
+
+For licensing, research collaboration, or a private technical review, contact TFast Digital Agency through its official website. Pricing is scoped to the requested tier and delivery rights.
 
 ---
 
-## Honest limits
-
-This research has genuine gaps, listed openly in [`BRIEF.md`](BRIEF.md) §6 — including
-one that matters commercially: whether the newest SoC generations gate the test runtime
-more strongly is **untested**, and should not be assumed. Every claim in the reports
-carries a confidence label, and seven open questions are registered rather than hidden.
-
-A brief that claims no gaps is not credible. Read the gaps; they are the reason to trust
-the rest.
-
----
-
-## Provenance
-
-This is an **independent reconstruction and behavioural specification**, not vendor source
-code. No vendor source was obtained. See [`SCOPE.md`](SCOPE.md) §4 before signing — it
-determines what you can safely do with the material, and it is the one section a buyer
-should not skip.
-
----
+**Responsible use:** Research is intended for authorised repair, interoperability, and security investigation. It is not an authorisation to service third-party devices without consent. No guarantee of compatibility with any particular device or firmware is made.
